@@ -1,9 +1,8 @@
 package GenTree;
-import java.util.ArrayList;
 
 public class Tree {
 
-    ArrayList <String> tree = new ArrayList<>();
+    //ArrayList <String> tree = new ArrayList<>();
 
     // public void saveTree(Person person){
     //     Parents p = new Parents();
