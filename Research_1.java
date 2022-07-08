@@ -1,11 +1,9 @@
 package GenTree;
 
-public class Research_1 {
+public class Research_1 implements Researchable{
 
-    public static void getChildrens(Person person){
-        Childrens ch = new Childrens();
-        ch.saveChildrens(person);
-        ch.printChildrens(ch.childrens);
+    public void buttonClick(Person person){
+        PrinterConsole.printArray(person.node.getChildren());
     }
 
 }

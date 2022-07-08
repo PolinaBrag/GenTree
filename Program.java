@@ -1,41 +1,56 @@
 package GenTree;
+import GenTree.Person.Sex;
 
 public class Program {
     public static void main(String[] args) {
 
-        Person andrew = new Person("Андрей", 36, null, "Виктория", "Виктор", "Ирина", "Яна", "Матвей", null, null,
-                null);
-        Person sveta = new Person("Светлана", 30, "Даниил", null, "Дмитрий", "Мария", "Яна", "Матвей", null, null,
-                null);
-        Person yana = new Person("Яна", 7, "Матвей", null, "Андрей", "Светлана", null, null, null, null, null);
-        Person matthew = new Person("Матвей", 1, null, "Яна", "Андрей", "Светлана", null, null, null, null, null);
-        Person irina = new Person("Ирина", 52, null, "Софья", "Виктор", "Екатерина", "Андрей", "Виктория", "Александр",
-                null, null);
-        Person victor = new Person("Виктор", 57, null, null, "Степан", "Елена", "Андрей", "Виктория", "Александр", null,
-                null);
-        Person maria = new Person("Мария", 51, null, null, "Владимир", "Наталья", "Светлана", null, null, null, null);
-        Person dmitry = new Person("Дмитрий", 55, null, "Екатерина", "Анатолий", "Галина", "Светлана", null, null, null,
-                null);
+        Person andrew = new Person("Андрей", 36, Sex.MALE);
+        Person yana = new Person("Яна", 7, Sex.FEMALE);
+        Person matthew = new Person("Матвей", 1, Sex.MALE);
+        Person sveta = new Person("Светлана", 30, Sex.FEMALE);
+        Person irina = new Person("Ирина", 52, Sex.FEMALE);
+        Person victor = new Person("Виктор", 57, Sex.MALE);
 
-        Person.getBaseInfo(maria);
-        Research_1.getChildrens(maria);
-        Research_2.getParents(maria);
-        Research_3.getTree(maria);
+        Node nodeAndrew = new Node(andrew);
+        andrew.node = nodeAndrew;
+        Node nodeYana = new Node(yana);
+        yana.node = nodeYana;
+        Node nodeMatthew = new Node(matthew);
+        matthew.node = nodeMatthew;
+        Node nodeSveta = new Node(sveta);
+        sveta.node = nodeSveta;
+        Node nodeIrina = new Node(irina);
+        irina.node = nodeIrina;
+        Node nodeVictor = new Node(victor);
+        victor.node = nodeVictor;
 
-        Person.getBaseInfo(andrew);
-        Research_1.getChildrens(andrew);
-        Research_2.getParents(andrew);
-        Research_3.getTree(andrew);
+        nodeYana.setFather(nodeAndrew);
+        nodeYana.setMother(nodeSveta);
+        
+        nodeAndrew.addChild(nodeMatthew, Parent.FATHER);
+        nodeSveta.addChild(nodeMatthew, Parent.MOTHER);
 
-        Person.getBaseInfo(victor);
-        Research_1.getChildrens(victor);
-        Research_2.getParents(victor);
-        Research_3.getTree(victor);
+        nodeAndrew.setFather(nodeVictor);
+        nodeAndrew.setMother(nodeIrina);
+    
 
-        Person.getBaseInfo(matthew);
-        Research_1.getChildrens(matthew);
-        Research_2.getParents(matthew);
-        Research_3.getTree(matthew);
+        // Это исследование показывает всех детей
+        Researchable reserach1 = new Research_1();
+        reserach1.buttonClick(andrew);
+        System.out.println("----------------");
+        reserach1.buttonClick(victor);
+        System.out.println("----------------");
+        reserach1.buttonClick(matthew);
+
+        System.out.println("\n");
+
+        // Это исследование показывает узел с родителями и детьми
+        Researchable reserach2 = new Research_2();
+        reserach2.buttonClick(andrew);
+        System.out.println("----------------");
+        reserach2.buttonClick(yana);
+        System.out.println("----------------");
+        reserach2.buttonClick(irina); 
 
     }
 
