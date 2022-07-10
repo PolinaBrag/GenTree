@@ -1,11 +1,10 @@
 package GenTree;
 
-
 public class Person {
 
     enum Sex {
-        MALE, 
-        FEMALE, 
+        MALE,
+        FEMALE,
         UNKNOWN
     }
 
@@ -14,16 +13,15 @@ public class Person {
     private Sex sex;
     public Node node;
 
-
-    public Person(String name, int age, Sex sex){
+    public Person(String name, int age, Sex sex) {
         this.name = name;
         this.age = age;
         this.sex = sex;
     }
 
     @Override
-    public String toString(){
-        return String.format("Имя: %s\nВозраст: %d\n",  this.name,  this.age);
+    public String toString() {
+        return String.format("Имя: %s\nВозраст: %d\n", this.name, this.age);
     }
 
     public String getName() {
@@ -38,5 +36,4 @@ public class Person {
         return age;
     }
 
-    
 }

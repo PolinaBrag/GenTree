@@ -1,4 +1,5 @@
 package GenTree;
+
 import java.util.ArrayList;
 
 public class Node {
@@ -33,8 +34,7 @@ public class Node {
     public Person getPerson() {
         return person;
     }
-    
-    
+
     public void addChild(Node child, Parent parent) {
         if (children.contains(child)) {
             return;
