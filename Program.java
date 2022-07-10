@@ -34,10 +34,11 @@ public class Program {
         nodeYana.setFather(nodeAndrew);
         nodeYana.setMother(nodeSveta);
 
-        nodeAndrew.addChild(nodeMatthew, Parent.FATHER);
-        nodeSveta.addChild(nodeMatthew, Parent.MOTHER);
         nodeAndrew.addChild(nodeStepan, Parent.FATHER);
         nodeSveta.addChild(nodeStepan, Parent.MOTHER);
+        nodeAndrew.addChild(nodeMatthew, Parent.FATHER);
+        nodeSveta.addChild(nodeMatthew, Parent.MOTHER);
+
         nodeAndrew.addChild(nodeAnna, Parent.FATHER);
         nodeSveta.addChild(nodeAnna, Parent.MOTHER);
 
