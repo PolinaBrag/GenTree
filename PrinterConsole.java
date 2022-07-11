@@ -2,13 +2,13 @@ package GenTree;
 
 import java.util.ArrayList;
 
-public class PrinterConsole {
+public class PrinterConsole implements Printer {
 
-    public static void printPerson(Person person) {
+    public void printPerson(Person person) {
         System.out.printf("Имя: %s\nВозраст: %d\n", person.getName(), person.getAge());
     }
 
-    public static void printArray(ArrayList<Node> node) {
+    public void printArray(ArrayList<Node> node) {
         if (!node.isEmpty()) {
             for (Node m : node) {
                 System.out.print(m.getPerson().getName() + " ");
@@ -20,7 +20,7 @@ public class PrinterConsole {
 
     }
 
-    public static void printNode(Node node) {
+    public void printNode(Node node) {
         if (node.getFather() != null && node.getMother() != null) {
             System.out.printf("%s %s\n%s\n", node.getFather().getPerson().getName(),
                     node.getMother().getPerson().getName(), node.getPerson().getName());

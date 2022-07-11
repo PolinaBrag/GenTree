@@ -15,21 +15,21 @@ public class Program {
         Person victor = new Person("Виктор", 57, Sex.MALE);
 
         Node nodeAndrew = new Node(andrew);
-        andrew.node = nodeAndrew;
+        andrew.setNode(nodeAndrew);
         Node nodeYana = new Node(yana);
-        yana.node = nodeYana;
+        yana.setNode(nodeYana);
         Node nodeAnna = new Node(anna);
-        anna.node = nodeAnna;
+        anna.setNode(nodeAnna);
         Node nodeStepan = new Node(stepan);
-        stepan.node = nodeStepan;
+        stepan.setNode(nodeStepan);
         Node nodeMatthew = new Node(matthew);
-        matthew.node = nodeMatthew;
+        matthew.setNode(nodeMatthew);
         Node nodeSveta = new Node(sveta);
-        sveta.node = nodeSveta;
+        sveta.setNode(nodeSveta);
         Node nodeIrina = new Node(irina);
-        irina.node = nodeIrina;
+        irina.setNode(nodeIrina);
         Node nodeVictor = new Node(victor);
-        victor.node = nodeVictor;
+        victor.setNode(nodeVictor);
 
         nodeYana.setFather(nodeAndrew);
         nodeYana.setMother(nodeSveta);
@@ -46,7 +46,7 @@ public class Program {
         nodeAndrew.setMother(nodeIrina);
 
         // Это исследование показывает всех детей, отсортированных по первой букве имени
-        Researchable reserach1 = new Research_1();
+        Researchable reserach1 = new ResearchChildren();
         reserach1.buttonClick(andrew);
         System.out.println("----------------");
         reserach1.buttonClick(victor);
@@ -55,8 +55,8 @@ public class Program {
 
         System.out.println("\n");
 
-        // Это исследование показывает узел с родителями и детьми
-        Researchable reserach2 = new Research_2();
+        //Это исследование показывает узел с родителями и детьми
+        Researchable reserach2 = new ResearchNode();
         reserach2.buttonClick(andrew);
         System.out.println("----------------");
         reserach2.buttonClick(yana);

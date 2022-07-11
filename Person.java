@@ -11,7 +11,7 @@ public class Person {
     private String name;
     private int age;
     private Sex sex;
-    public Node node;
+    private Node node;
 
     public Person(String name, int age, Sex sex) {
         this.name = name;
@@ -26,6 +26,14 @@ public class Person {
 
     public String getName() {
         return name;
+    }
+
+    public Node getNode(){
+        return node;
+    }
+
+    public void setNode(Node node){
+        this.node = node;
     }
 
     public Sex getSex() {
